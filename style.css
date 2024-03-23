@@ -1,0 +1,301 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Allows absolute positioning for children */
+    padding: 20px 10%;
+    background-color: #fff;
+    border-bottom: 2px solid black;
+}
+
+.logo h1 {
+    font-size: 30px;
+    color: black; /* Adjust color as needed */
+}
+
+.logo h1 a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Aligns links horizontally */
+    align-items: center; /* Center links vertically */
+}
+
+.nav-links li {
+    padding: 0px 20px;
+}
+
+.nav-links li a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #555; /* Change hover color as needed */
+}
+
+/* Contact Button Styles */
+.contact-btn {
+    padding: 9px 25px;
+    background-color: black;
+    height: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #333;
+}
+
+.nav-links li a:hover {
+    background-image: linear-gradient(to left, #007ffe5d 50%, #fff 0%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    color: black;
+    transition: background-position 0.5s, color 0.9s;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 30px;
+    height: 3px;
+    background: black;
+    margin: 5px 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Animation for nav-links */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Hamburger toggle to cross */
+.hamburger.toggle .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.toggle .line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.toggle .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/* Home Section Styles */
+.home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh; /* Adjust based on your header height */
+    padding: 20px;
+    background: #fff; /* Light background, consider using a background image or color that fits your brand */
+    color: #333; /* Adjust text color as needed */
+}
+
+.home-content h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.home-content p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: justify;
+    max-width: 600px; /* Ensures text doesn’t span too wide on larger screens */
+}
+
+.btn {
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+    background-color: black; /* Primary button color */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #333; /* Button hover effect */
+}
+
+/* About Section Styles */
+.about-section {
+    background-color: #fff; /* Consider using a color that fits your site’s theme */
+    padding: 50px 0;
+    color: #333;
+}
+
+.about-section h2 {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.about-text p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+    max-width: 600px; /* Keeps the text from spanning too wide */
+}
+
+
+/* Responsive Design for the About Section */
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .about-text, .about-img {
+        width: 100%;
+    }
+
+    .about-img img {
+        margin: 0 auto; /* Center align image */
+    }
+}
+
+/* Skills Section Styling */
+.skills-section {
+    background: #fff; /* or any color that fits your design */
+    padding: 50px 0;
+    text-align: center; /* Center-aligning the skill items */
+}
+
+.skills-section h2 {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+}
+
+.skill {
+    display: inline-flex; /* Aligns icon and text side by side */
+    align-items: center;
+    background-color: #000; /* Default black background */
+    color: #fff;
+    margin: 10px; /* Spacing between skill items */
+    padding: 10px 20px;
+    border-radius: 25px; /* Creates the pill shape */
+    cursor:default;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.skill:hover {
+    box-shadow: 0px 0px 50px #1572b6;
+    transition: 0.8s;
+}
+
+
+.skill-icon {
+    height: 32px; /* Fixed height for icons */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.skill-name {
+    font-weight: bold;
+}
+
+/* Custom colors for different skills */
+.skill-html .skill-icon { background-color: #e34c26; }
+.skill-css .skill-icon { background-color: #1572b6; }
+/* Continue for other skills, setting the appropriate background colors */
+
+@media screen and (max-width: 768px) {
+    .skills-section {
+        background: #fff; /* or any color that fits your design */
+        padding: 50px 0;
+        text-align: center; /* Center-aligning the skill items */
+    }
+    
+    .skill {
+        display: inline-flex; /* Aligns icon and text side by side */
+        align-items: center;
+        background-color: #000; /* Default black background */
+        color: #fff;
+        margin: 10px; /* Spacing between skill items */
+        padding: 10px 20px;
+        border-radius: 25px; /* Creates the pill shape */
+        cursor:default;
+        width: 142px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    }
+
+    .skill-icon {
+        height: 32px; /* Fixed height for icons */
+        margin-right: 10px; /* Space between icon and text */
+    }
+    
+    .skill-name {
+        font-weight: bold;
+        font-size: 12px;
+    }
+}
